@@ -1,0 +1,11 @@
+.App_HomePage {
+    margin-top: 80px;
+    height: 100%;
+}
+
+.App_HomePage_Container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 100%;
+}

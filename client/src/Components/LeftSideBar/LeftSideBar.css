@@ -1,0 +1,56 @@
+.App_LeftSideBar {
+    max-width: 280px;
+    height: 100%;
+}
+
+.App_LeftSideBar_Menu {
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid red; */
+    border-radius: 10px;
+    padding: 4px;
+    background-color: #393E46;
+}
+
+.App_LeftSideBar_MenuItems {
+    display: flex;
+    flex-direction: row;
+    padding: 8px 4px;
+    /* border: 1px solid red; */
+    margin: 4px;
+    border-radius: 8px;
+}
+
+.App_LeftSideBar_MenuItems:hover {
+    background-color: #222831;
+    cursor: pointer;
+}
+
+.App_LeftSideBar_MenuIcons {
+    margin: 5px;
+    width: 30px;
+    height: 30px;
+}
+
+.App_LeftSideBar_MenuRight>h4 {
+    margin: 4px 4px 0px 4px;
+}
+
+.App_LeftSideBar_MenuRight>p {
+    margin: 0px 4px 0px 4px;
+    font-size: 13px;
+}
+
+.App_LeftSideBar_Menu_Tags {
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid red; */
+    border-radius: 10px;
+    margin-top: 15px;
+    padding: 4px;
+    background-color: #393E46;
+}
+
+.App_LeftSideBar_Menu_Tags> :nth-child(1) {
+    margin: 8px;
+}

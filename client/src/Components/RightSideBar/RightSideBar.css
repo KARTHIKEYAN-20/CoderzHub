@@ -1,0 +1,56 @@
+.App_RightSideBar {
+    max-width: 280px;
+    height: 100%;
+}
+
+.App_RightSideBar_Container,
+.App_RightSideBar_Container_Blog {
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid red; */
+    border-radius: 10px;
+    padding: 4px;
+    background-color: #393E46;
+}
+
+.App_RightSideBar_ContainerList {
+    display: flex;
+    flex-direction: row;
+    padding: 8px 4px;
+    /* border: 1px solid red; */
+    margin: 4px;
+    border-radius: 8px;
+}
+
+.App_RightSideBar_ContainerList:hover {
+    background-color: #222831;
+    cursor: pointer;
+}
+
+.App_RightSideBar_MenuRight>img {
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+}
+
+.App_RightSideBar_MenuRight>h4,
+.App_RightSideBar_MenuRight>h5 {
+    margin: 4px 4px 0px 4px;
+}
+
+.App_RightSideBar_MenuRight>p {
+    margin: 0px 4px 0px 4px;
+    font-size: 13px;
+}
+
+.App_RightSideBar_Container> :nth-child(1) {
+    margin: 8px;
+}
+
+.App_RightSideBar_Container_Blog {
+    margin-top: 15px;
+}
+
+.App_RightSideBar_Container_Blog>:nth-child(1) {
+    margin: 8px;
+}
