@@ -66,7 +66,7 @@ const Header = () => {
                                 <FaHome color='white' />
                                 <span className='menuItem'>HOME</span>
                             </Link>
-                            <Link to='/questions' className='menus'>
+                            <Link to='/question' className='menus'>
                                 <HiMiniChatBubbleLeftRight color='white' />
                                 <span className='menuItem'>QUESTIONS</span>
                             </Link>
@@ -74,9 +74,9 @@ const Header = () => {
                                 <FaUsers color='white' />
                                 <span className='menuItem'>USERS</span>
                             </Link>
-                            <Link to='/postquestion' className='menus'>
+                            <Link to='/askquestion' className='menus'>
                                 <FaSquarePlus color='white' />
-                                <span className='menuItem'>ASK A QUESTION</span>
+                                <span className='menuItem'>ASK QUESTION</span>
                             </Link>
                             <Link to='/about' className='menus'>
                                 <FaCircleInfo color='white' />

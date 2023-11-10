@@ -1,0 +1,57 @@
+.app_askquestion {
+    margin-top: 100px;
+    max-height: 100vh;
+}
+
+.app_askquestion_container {
+    margin: auto;
+    max-width: 1200px;
+}
+
+.app_askquestion_container h1 {
+    padding: 80px 0px 20px 0px;
+}
+
+.app_form_container {
+    padding: 20px;
+    border-radius: 3px;
+    background-color: #393E46;
+}
+
+.app_form_container label p {
+    margin: 0%;
+    font-size: 13px;
+    padding: 3px 0px;
+}
+
+.app_form_container label h4 {
+    margin-bottom: 0%;
+}
+
+.app_form_container label p {
+    margin: 0%;
+    font-size: 13px;
+    padding: 3px 0px;
+}
+
+.app_form_container label input,
+.app_form_container label textarea {
+    padding: 10px;
+    border: solid 1px white;
+    background-color: #393E46;
+    width: calc(100% - 20px);
+    color: white;
+    outline: none;
+}
+
+.app_reviewBtn {
+    margin: 30px 0px;
+    border-radius: 10px;
+    min-width: 120px;
+    height: 40px;
+    text-align: center;
+    border: none;
+    outline: none;
+    font-weight: bold;
+    cursor: pointer;
+}

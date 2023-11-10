@@ -1,5 +1,6 @@
 import React from 'react'
 import LeftSideBar from '../LeftSideBar/LeftSideBar'
+import Main from '../Main/Main'
 import RightSideBar from '../RightSideBar/RightSideBar'
 import './HomePage.css'
 
@@ -8,9 +9,7 @@ const HomePage = () => {
         <div className='App_HomePage'>
             <div className="App_HomePage_Container">
                 <LeftSideBar />
-                <div className="App_HomePage_Right">
-                    Middle
-                </div>
+                <Main />
                 <RightSideBar />
             </div>
         </div>

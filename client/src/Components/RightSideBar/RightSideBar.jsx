@@ -59,7 +59,7 @@ const RightSideBar = () => {
                         </div>
                         <div className="App_RightSideBar_MenuRight">
                             <h5>Getting Started with Machine Learning: A Beginner's Guide</h5>
-                            <p>by Lakshmi Priya</p>
+                            <p>by Mrinal Desan</p>
                         </div>
                     </div>
                     <div className="App_RightSideBar_ContainerList">
