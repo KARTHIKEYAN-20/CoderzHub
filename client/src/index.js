@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import { Provider } from 'react-redux';
 import { configureStore, applyMiddleware, compose } from 'redux';
+import Reducers from './reducers'
 
 const store = configureStore(Reducers, compose(applyMiddleware(thunk)));
 
