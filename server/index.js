@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import mongoose from 'mongoose';
 import userRoutes from './routes/users.js';
+import questionRoutes from './routes/questions.js';
 import dotenv from 'dotenv';
 dotenv.config();
 
@@ -15,6 +16,7 @@ app.get('/', (req, res) => {
 });
 
 app.use('/user', userRoutes);
+app.use('/questions', questionRoutes);
 
 const PORT = process.env.PORT || 5000;
 const CONNECTION_URL = process.env.CONNECTION_URL;
