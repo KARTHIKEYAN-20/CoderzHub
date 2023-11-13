@@ -2,6 +2,7 @@ import React from 'react'
 import Profile from '../../assets/following.png'
 import { BiUpvote, BiMessageRoundedDetail } from 'react-icons/bi'
 import { FiEye } from 'react-icons/fi'
+import { Link } from 'react-router-dom'
 import './Question.css'
 
 const Question = ({ question }) => {
@@ -14,7 +15,9 @@ const Question = ({ question }) => {
                 <div className="App_Question_name">
                     {question.userPosted}
                 </div>
-                <h3>{question.questionTitle}</h3>
+                <Link to={`/question/${question._id}`} key={question._id} className="App_Question_Title">
+                    <h3>{question.questionTitle}</h3>
+                </Link>
                 <div className="App_Question_tags">
                     {question.questionTags.map((tag, index) => (
                         <span key={index} className='App_Questions_tag'>{tag}</span>

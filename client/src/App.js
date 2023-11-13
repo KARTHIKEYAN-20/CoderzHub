@@ -25,7 +25,7 @@ function App() {
           <Route path="/user" element={<Login />} />
           <Route path="/" element={<HomePage />} />
           <Route path="/askquestion" element={<AskQuestion />} />
-          <Route path="/question" element={<QuestionDetails />} />
+          <Route path="/question/:id" element={<QuestionDetails />} />
         </Routes>
       </Router>
     </div>
