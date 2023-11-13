@@ -4,52 +4,30 @@ import { HiMiniChatBubbleLeftRight } from 'react-icons/hi2'
 import { FaUsers, FaSquarePlus, FaCircleInfo } from 'react-icons/fa6'
 import { IoSearchSharp } from 'react-icons/io5'
 import { FaUserCog } from 'react-icons/fa'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { useSelector, useDispatch } from 'react-redux'
+import { setCurrentUser } from '../../actions/currentUser'
 import './Header.css'
+import { useEffect } from 'react'
 
 const Header = () => {
-    //const dispatch = useDispatch();
-    //const history = useNavigate();
-    //const userName = useSelector(selectUserName);
-    //const userPhoto = useSelector(selectUserPhoto);
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
 
-    // useEffect(() => {
-    //     auth.onAuthStateChanged(async (user) => {
-    //         if (user) {
-    //             setUser(user);
-    //             history('/home');
-    //         }
-    //     });
-    // }, [userName]);
+    useEffect(() => {
+        const fetchUser = async () => {
+            await new Promise((resolve) => setTimeout(resolve, 1000));
+            const storedUser = JSON.parse(localStorage.getItem('Profile'));
+            dispatch(setCurrentUser(storedUser));
 
-    // const handleAuth = () => {
-    //     if (!userName) {
-    //         auth.signInWithPopup(provider)
-    //             .then((result) => {
-    //                 setUser(result.user);
-    //             })
-    //             .catch((error) => {
-    //                 alert(error.message);
-    //             });
-    //     } else if (userName) {
-    //         auth.signOut()
-    //             .then(() => {
-    //                 dispatch(setSignOutState());
-    //                 history('/');
-    //             })
-    //             .catch((error) => alert(error.message));
-    //     }
-    // };
+            if (!storedUser) {
+                navigate('/user');
+            }
+        };
 
-    // const setUser = (user) => {
-    //     dispatch(
-    //         setUserLoginDetails({
-    //             name: user.displayName,
-    //             email: user.email,
-    //             photo: user.photoURL,
-    //         })
-    //     );
-    // };
+        fetchUser();
+    }, [dispatch, navigate]);
+
     return (
         <nav className='Header'>
             {/* <a className='logo'>
@@ -82,7 +60,7 @@ const Header = () => {
                                 <FaCircleInfo color='white' />
                                 <span className='menuItem'>ABOUT</span>
                             </Link>
-                            <Link to='/about' className='menus'>
+                            <Link to='/profile' className='menus'>
                                 <FaUserCog color='white' />
                                 <span className='menuItem'>PROFILE</span>
                             </Link>

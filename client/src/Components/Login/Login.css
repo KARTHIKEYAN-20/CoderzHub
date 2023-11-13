@@ -124,13 +124,13 @@
     margin-right: 3px;
 }
 
-.app_login_forgot a {
+.app_login_forgot div {
     /* color: #162938; */
     color: white;
     text-decoration: none;
 }
 
-.app_login_forgot a:hover {
+.app_login_forgot div:hover {
     text-decoration: underline;
 }
 
@@ -159,14 +159,14 @@
     margin: 25px 0 10px;
 }
 
-.app_login_register p a {
+.app_login_register p div {
     color: #00FF41;
     text-decoration: none;
     font-weight: 600;
     margin-left: 4px;
 }
 
-.app_login_register p a:hover {
+.app_login_register p div:hover {
     text-decoration: underline;
 }
 

@@ -3,12 +3,12 @@ import { setCurrentUser } from './currentUser'
 
 export const signup = (authData, navigate) => async (dispatch) => {
     try {
-        const { data } = await api.signIn(authData)
-        dispatch({ type: 'AUTH', data })
-        dispatch(setCurrentUser(JSON.parse(localStorage.getItem('Profile'))))
+        const { data } = await api.signUp(authData);
+        dispatch({ type: 'AUTH', data });
+        dispatch(setCurrentUser(JSON.parse(localStorage.getItem('Profile'))));
         navigate('/');
     } catch (error) {
-        console.log(error.message);
+        console.error('Error in signup:', error.message);
     }
 }
 
@@ -19,6 +19,6 @@ export const login = (authData, navigate) => async (dispatch) => {
         dispatch(setCurrentUser(JSON.parse(localStorage.getItem('Profile'))))
         navigate('/');
     } catch (error) {
-        console.log(error.message);
+        console.error('Error in login:', error.message);
     }
 }

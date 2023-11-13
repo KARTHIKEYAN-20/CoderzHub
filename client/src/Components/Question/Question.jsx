@@ -4,7 +4,7 @@ import { BiUpvote, BiMessageRoundedDetail } from 'react-icons/bi'
 import { FiEye } from 'react-icons/fi'
 import './Question.css'
 
-const Question = () => {
+const Question = ({ question }) => {
     return (
         <div className='App_Question'>
             <div className="App_Question_logo">
@@ -12,17 +12,18 @@ const Question = () => {
             </div>
             <div className="App_Question_details">
                 <div className="App_Question_name">
-                    Kishoth
+                    {question.userPosted}
                 </div>
-                <h3>Quick Sort not working in c++</h3>
+                <h3>{question.questionTitle}</h3>
                 <div className="App_Question_tags">
-                    <span className='App_Questions_tag'>C++</span>
-                    <span className='App_Questions_tag'>C</span>
+                    {question.questionTags.map((tag, index) => (
+                        <span key={index} className='App_Questions_tag'>{tag}</span>
+                    ))}
                 </div>
                 <div className="App_Question_icons">
                     <div className="App_Question_icon">
                         <BiUpvote className='App_Question_i' />
-                        <span>123</span>
+                        <span>{question.upVote.length}</span>
                     </div>
                     <div className="App_Question_icon">
                         <FiEye className='App_Question_i' />
@@ -30,7 +31,7 @@ const Question = () => {
                     </div>
                     <div className="App_Question_icon">
                         <BiMessageRoundedDetail className='App_Question_i' />
-                        <span>10</span>
+                        <span>{question.answers.length}</span>
                     </div>
                 </div>
             </div>

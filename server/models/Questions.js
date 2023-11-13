@@ -16,4 +16,4 @@ const QuestionSchema = mongoose.Schema({
     }]
 })
 
-export default QuestionSchema.model("Question", QuestionSchema)
+export default mongoose.model("Question", QuestionSchema)
