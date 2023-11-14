@@ -7,6 +7,10 @@ const questionReducer = (state = initialState, action) => {
         case "POST_QUESTION":
             return { ...state };
 
+        case "POST_ANSWER":
+            console.log("hi");
+            return { ...state };
+
         case "FETCH_ALL_QUESTIONS":
             return { ...state, data: action.payload };
 

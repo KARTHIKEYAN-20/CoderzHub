@@ -18,7 +18,7 @@ const Main = () => {
             </div>
             <div className="App_main_question">
                 {questionsList.data &&
-                    questionsList.data.map((question) => (
+                    questionsList.data.slice().reverse().map((question) => (
                         <Question key={question._id} question={question} />
                     ))}
             </div>
