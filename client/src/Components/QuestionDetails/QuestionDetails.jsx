@@ -3,11 +3,11 @@ import LeftSideBar from '../LeftSideBar/LeftSideBar'
 import RightSideBar from '../RightSideBar/RightSideBar'
 import Profile from '../../assets/following.png'
 import { BiUpvote, BiDownvote, BiMessageRoundedDetail } from 'react-icons/bi'
-import { FiEye } from 'react-icons/fi'
+import { FiEye, FiTrash } from 'react-icons/fi'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'
 import './QuestionDetails.css'
-import { postAnswer } from '../../actions/question'
+import { deleteQuestion, postAnswer } from '../../actions/question'
 import { useState } from 'react'
 
 const QuestionDetails = () => {
@@ -36,10 +36,14 @@ const QuestionDetails = () => {
             if (Answer === '') {
                 alert('Enter an answer to submit');
             } else {
-                dispatch(postAnswer({ id, answerBody: Answer, userAnswered: user.result.name }));
+                dispatch(postAnswer({ id, answerBody: Answer, userAnswered: user.result.name, userId: user.result._id }));
                 setAnswer('');
             }
         }
+    }
+
+    const handleDelete = () => {
+        dispatch(deleteQuestion(id, navigate));
     }
 
     return (
@@ -77,6 +81,11 @@ const QuestionDetails = () => {
                                     }
                                 </div>
                                 <p>{question.questionBody}</p>
+                                {
+                                    user?.result?._id === question.userId && (
+                                        <FiTrash className="App_Trash_i" onClick={handleDelete} />
+                                    )
+                                }
                             </div>
                         </div>
                         <div className="App_questionDetails_Comment">
@@ -124,6 +133,11 @@ const QuestionDetails = () => {
                                                 <span>0</span>
                                             </div>
                                         </div>
+                                        {
+                                            user?.result?._id === question.userId && (
+                                                <FiTrash className="App_Trash_i" />
+                                            )
+                                        }
                                     </div>
                                 ))}
                             </>

@@ -8,7 +8,6 @@ const questionReducer = (state = initialState, action) => {
             return { ...state };
 
         case "POST_ANSWER":
-            console.log("hi");
             return { ...state };
 
         case "FETCH_ALL_QUESTIONS":
