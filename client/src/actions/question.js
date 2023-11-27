@@ -32,6 +32,24 @@ export const postAnswer = (answerData) => async (dispatch) => {
     }
 }
 
+export const viewQuestion = (id, userId) => async (dispatch) => {
+    try {
+        await api.viewQuestion(id, userId);
+        dispatch(fetchAllQuestions());
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+export const voteQuestion = (id, userId) => async (dispatch) => {
+    try {
+        await api.voteQuestion(id, userId);
+        dispatch(fetchAllQuestions());
+    } catch (error) {
+        console.log(error);
+    }
+}
+
 export const deleteQuestion = (id, navigate) => async (dispatch) => {
     try {
         api.deleteQuestion(id);
@@ -44,7 +62,7 @@ export const deleteQuestion = (id, navigate) => async (dispatch) => {
 
 export const deleteAnswer = (id, answerId) => async (dispatch) => {
     try {
-        const { data } = await api.deleteAnswer(id, answerId);
+        await api.deleteAnswer(id, answerId);
         dispatch(fetchAllQuestions());
     } catch (error) {
         console.log(error);

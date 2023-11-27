@@ -54,6 +54,7 @@
 .App_Question_i {
     font-size: 18px;
     margin-bottom: -4px;
+    cursor: pointer;
 }
 
 .App_Question_icon>span {

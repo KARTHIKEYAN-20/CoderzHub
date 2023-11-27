@@ -7,12 +7,15 @@ const QuestionSchema = mongoose.Schema({
     userPosted: { type: String, required: "Question must have an author" },
     userId: { type: String },
     upVote: { type: [String], default: [] },
+    views: { type: [String], default: [] },
     postedOn: { type: Date, default: Date.now },
     answers: [{
         answerBody: { type: String, required: "Answer must have a body" },
         userAnswered: String,
         userId: String,
         answeredOn: { type: Date, default: Date.now },
+        upVote: { type: [String], default: [] },
+        downVote: { type: [String], default: [] },
     }]
 })
 

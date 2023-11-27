@@ -70,7 +70,7 @@ const QuestionDetails = () => {
                                     </div>
                                     <div className="App_Question_icon">
                                         <FiEye className='App_Question_i' />
-                                        <span>1234</span>
+                                        <span>{question.views.length}</span>
                                     </div>
                                     <div className="App_Question_icon">
                                         <BiMessageRoundedDetail className='App_Question_i' />
