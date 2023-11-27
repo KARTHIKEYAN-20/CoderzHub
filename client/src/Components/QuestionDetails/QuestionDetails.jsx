@@ -7,7 +7,7 @@ import { FiEye, FiTrash } from 'react-icons/fi'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'
 import './QuestionDetails.css'
-import { deleteQuestion, postAnswer } from '../../actions/question'
+import { deleteAnswer, deleteQuestion, postAnswer } from '../../actions/question'
 import { useState } from 'react'
 
 const QuestionDetails = () => {
@@ -44,6 +44,10 @@ const QuestionDetails = () => {
 
     const handleDelete = () => {
         dispatch(deleteQuestion(id, navigate));
+    }
+
+    const handleAnswerDelete = (answerId) => {
+        dispatch(deleteAnswer(id, answerId));
     }
 
     return (
@@ -134,8 +138,8 @@ const QuestionDetails = () => {
                                             </div>
                                         </div>
                                         {
-                                            user?.result?._id === question.userId && (
-                                                <FiTrash className="App_Trash_i" />
+                                            user?.result?._id === answer.userId && (
+                                                <FiTrash className="App_Trash_i" onClick={() => handleAnswerDelete(answer._id)} />
                                             )
                                         }
                                     </div>

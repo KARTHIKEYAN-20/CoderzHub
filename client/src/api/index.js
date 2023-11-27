@@ -8,3 +8,4 @@ export const postQuestion = (questionData) => API.post('/questions/ask', questio
 export const deleteQuestion = (id) => API.delete(`/questions/delete/${id}`);
 export const getAllQuestions = () => API.get('/questions/get');
 export const postAnswer = (id, answerBody, userAnswered, userId) => API.patch(`/answers/post/${id}`, { answerBody, userAnswered, userId });
+export const deleteAnswer = (id, answerId) => API.patch(`/answers/delete/${id}`, { answerId });
