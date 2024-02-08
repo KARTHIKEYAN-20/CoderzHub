@@ -1,0 +1,73 @@
+.App_Profile {
+    margin-top: 100px;
+    max-height: 100vh;
+}
+
+.App_Profile_Box {
+    width: 95%;
+    height: 88vh;
+    background-color: #f0f0f0;
+    margin: auto; 
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.App_Profile_top {
+    flex: 30; 
+    border: 1px solid #000;
+    margin-bottom: 1vh; 
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.App_Profile_search {
+    flex: 20;
+    margin: 2px;
+    border: 1px solid #000;
+}
+
+.App_Profile_intro {
+    flex: 80;
+    margin: 2px;
+    border: 1px solid #000;
+    display: flex;
+}
+
+.App_Profile_introLeft {
+    flex: 35; /* 40% width */
+    border: 1px solid #000; /* Border between the two boxes */
+    box-sizing: border-box;
+    margin: 2px;
+}
+
+.App_Profile_introRight {
+    flex: 75; /* 60% width */
+    box-sizing: border-box;
+    border: 1px solid #000;
+    margin: 2px;
+}
+
+.App_Profile_down {
+    flex: 70; 
+    border: 1px solid #000;
+    margin-top: 1vh;
+    overflow: auto;
+    display: flex;
+}
+
+.App_Profile_left {
+    flex: 35; /* 40% width */
+    border: 1px solid #000; /* Border between the two boxes */
+    box-sizing: border-box;
+    margin: 2px;
+}
+
+.App_Profile_right {
+    flex: 75; /* 60% width */
+    box-sizing: border-box;
+    border: 1px solid #000;
+    margin: 2px;
+}

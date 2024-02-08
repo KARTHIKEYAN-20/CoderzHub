@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API = axios.create({ baseURL: "http://localhost:5000" });
+const API = axios.create({ baseURL: "https://vigilant-space-eureka-pqj4grvv6q739wrg-5000.app.github.dev/" });
 
 export const logIn = (authData) => API.post('/user/login', authData);
 export const signUp = (authData) => API.post('/user/signup', authData);
