@@ -7,6 +7,7 @@ import { FaUserCog } from 'react-icons/fa'
 import { Link, useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { setCurrentUser } from '../../actions/currentUser'
+import User from '../../assets/following.png'
 import './Header.css'
 import { useEffect } from 'react'
 
@@ -27,6 +28,12 @@ const Header = () => {
 
         fetchUser();
     }, [dispatch, navigate]);
+
+    const handleSignOut = () => {
+        dispatch({ type: "LOGOUT" });
+        dispatch(setCurrentUser(null));
+        navigate('/user');
+    }
 
     return (
         <nav className='Header'>
@@ -70,9 +77,9 @@ const Header = () => {
                             </form>
                         </div>
                         <div className='profile'>
-                            <img className='profilePic' src={''}></img>
+                            <img className='profilePic' src={User}></img>
                             <div className='dropDown'>
-                                <span onClick={''} >Sign out</span>
+                                <span onClick={handleSignOut} >Sign out</span>
                             </div>
                         </div>
                     </>
