@@ -44,6 +44,8 @@
 }
 
 .App_Profile_introRight {
+    display: flex;
+    flex-direction: row;
     flex: 75; /* 60% width */
     box-sizing: border-box;
     border: 1px solid #000;
@@ -70,4 +72,17 @@
     box-sizing: border-box;
     border: 1px solid #000;
     margin: 2px;
+}
+
+.App_Profile_introcard , .App_Profile_share{
+    flex: 50;
+    box-sizing: border-box;
+    border: 1px solid #000;
+    margin: 2px;
+}
+
+.App_Profile_introcard_name {
+    padding-left: 20px;
+    padding-top: 30px;
+    color: #000;
 }

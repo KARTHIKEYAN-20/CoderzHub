@@ -55,3 +55,44 @@
     font-weight: bold;
     cursor: pointer;
 }
+
+.tags-input-container{
+    border: solid 1px white;
+    background-color: #393E46;
+    width: calc(100% - 20px);
+    padding: .5em;
+    border-radius: 3px;
+    margin-top: 1em;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: .5em;
+}
+
+.tag-item{
+    background-color: rgb(78, 77, 77);
+    display: inline-block;
+    padding: .3em .5em;
+    border-radius: 20px;
+}
+
+.tag-item .close{
+    height: 15px;
+    width: 15px;
+    background-color: rgb(48, 48, 48);
+    color: #fff;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: .5em;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.tags-input{
+    flex-grow: 1;
+    padding: .5em 0;
+    border: none;
+    outline: none;
+}

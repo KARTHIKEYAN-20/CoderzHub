@@ -7,11 +7,17 @@ import Cpp from '../../assets/cpp.png'
 import Python from '../../assets/python.png'
 import './LeftSideBar.css'
 
-const LeftSideBar = () => {
+const LeftSideBar = ({ onFilterChange }) => {
+
+    const handleFilterClick = (option) => {
+        onFilterChange(option);
+    };
+
     return (
         <div className="App_LeftSideBar">
             <div className="App_LeftSideBar_Menu">
-                <div className="App_LeftSideBar_MenuItems">
+                <div className="App_LeftSideBar_MenuItems"
+                    onClick={() => handleFilterClick('newest')}>
                     <div className="App_LeftSideBar_MenuLeft">
                         <img src={New} alt='following' className='App_LeftSideBar_MenuIcons' />
                     </div>
@@ -20,7 +26,8 @@ const LeftSideBar = () => {
                         <p>Find the latest questions</p>
                     </div>
                 </div>
-                <div className="App_LeftSideBar_MenuItems">
+                <div className="App_LeftSideBar_MenuItems"
+                    onClick={() => handleFilterClick('popular')}>
                     <div className="App_LeftSideBar_MenuLeft">
                         <img src={Popular} alt='following' className='App_LeftSideBar_MenuIcons' />
                     </div>

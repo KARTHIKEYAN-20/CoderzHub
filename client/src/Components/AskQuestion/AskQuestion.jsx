@@ -1,15 +1,14 @@
-import React from 'react'
-import { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
-import { askQuestion } from '../../actions/question'
-import './AskQuestion.css'
+import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { askQuestion } from '../../actions/question';
+import './AskQuestion.css';
 
 const AskQuestion = () => {
-
     const [questionTitle, setQuestionTitle] = useState('');
     const [questionBody, setQuestionBody] = useState('');
-    const [questionTags, setQuestionags] = useState('');
+    const [tagInput, setTagInput] = useState('');
+    const [questionTags, setQuestionTags] = useState([]);
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -18,16 +17,40 @@ const AskQuestion = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         dispatch(askQuestion({ questionTitle, questionBody, questionTags, userPosted: user.result.name, userId: user.result._id }, navigate));
-    }
+    };
 
     const handlePress = (e) => {
         if (e.key === 'Enter') {
-            setQuestionBody(questionBody + "\n");
+            setQuestionBody(questionBody + '\n');
         }
-    }
+    };
+
+    const handleTagInput = (e) => {
+        setTagInput(e.target.value);
+    };
+
+    const handleAddTag = () => {
+        if (tagInput.trim() !== '' && questionTags.length < 5) {
+            setQuestionTags([...questionTags, tagInput.trim()]);
+            setTagInput('');
+        }
+    };
+
+    const handleRemoveTag = (index) => {
+        const updatedTags = [...questionTags];
+        updatedTags.splice(index, 1);
+        setQuestionTags(updatedTags);
+    };
+
+    const handleKeyPress = (e) => {
+        if (e.key === 'Enter') {
+            e.preventDefault(); 
+            handleAddTag();
+        }
+    };
 
     return (
-        <div className='app_askquestion'>
+        <div className="app_askquestion">
             <div className="app_askquestion_container">
                 <h2>Ask a public question</h2>
                 <form onSubmit={handleSubmit}>
@@ -54,12 +77,25 @@ const AskQuestion = () => {
                         </label>
                         <label htmlFor="askQuestionTags">
                             <h4>Tags</h4>
-                            <p>Add upto 5 tags to describe what your question is about</p>
-                            <input
-                                type="text"
-                                id='questionTitle'
-                                placeholder='eg: (c java python)'
-                                onChange={(e) => setQuestionags(e.target.value.split(" "))} />
+                            <p>Add up to 5 tags to describe what your question is about</p>
+                            <div className="tags-input-container">
+                                {questionTags.map((tag, index) => (
+                                    <div className="tag-item" key={index}>
+                                        <span className="text">{tag}</span>
+                                        <span className="close" onClick={() => handleRemoveTag(index)}>
+                                            &times;
+                                        </span>
+                                    </div>
+                                ))}
+                                <input
+                                    type="text"
+                                    id="questionTags"
+                                    placeholder="eg: (c java python)"
+                                    value={tagInput}
+                                    onChange={handleTagInput}
+                                    onKeyPress={handleKeyPress}  
+                                />
+                            </div>
                         </label>
                     </div>
                     <input type="submit" value='Review your question' className='app_reviewBtn' />

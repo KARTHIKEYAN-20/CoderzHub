@@ -6,10 +6,16 @@
 .App_questionDetails_info {
     display: flex;
     flex-direction: row;
+    overflow-x: auto;
 }
 
 .App_Question_heading {
     margin-left: 6px;
+}
+
+.App_Question_body {
+    white-space: pre-wrap;
+    overflow-x: auto;
 }
 
 .App_Question_heading>h2 {

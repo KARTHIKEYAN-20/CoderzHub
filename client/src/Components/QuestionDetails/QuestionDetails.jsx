@@ -84,7 +84,9 @@ const QuestionDetails = () => {
                                         ))
                                     }
                                 </div>
-                                <p>{question.questionBody}</p>
+                                <div className="App_Question_body">
+                                    <pre>{question.questionBody}</pre>
+                                </div>
                                 {
                                     user?.result?._id === question.userId && (
                                         <FiTrash className="App_Trash_i" onClick={handleDelete} />
@@ -122,7 +124,7 @@ const QuestionDetails = () => {
                                             </div>
                                             <h3>{answer.userAnswered}</h3>
                                         </div>
-                                        <p>{answer.answerBody}</p>
+                                        <pre>{answer.answerBody}</pre>
                                         <div className="App_Question_icons" style={{ marginLeft: '8px' }}>
                                             <div className="App_Question_icon">
                                                 <BiUpvote className='App_Question_i' />
