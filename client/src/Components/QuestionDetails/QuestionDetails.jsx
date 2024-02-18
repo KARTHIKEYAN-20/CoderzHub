@@ -36,7 +36,7 @@ const QuestionDetails = () => {
             if (Answer === '') {
                 alert('Enter an answer to submit');
             } else {
-                dispatch(postAnswer({ id, answerBody: Answer, userAnswered: user.result.name, userId: user.result._id }));
+                dispatch(postAnswer({ id, answerBody: Answer, userAnswered: user.result.name, userId: user.result._id, userPostedEmail: question.userPostedEmail, userPosted: question.userPosted }));
                 setAnswer('');
             }
         }

@@ -5,6 +5,7 @@ const QuestionSchema = mongoose.Schema({
     questionBody: { type: String, required: "Question must have a Body" },
     questionTags: { type: [String], required: "Question must have a tags" },
     userPosted: { type: String, required: "Question must have an author" },
+    userPostedEmail : { type: String, required: "Question must have an author emailID" },
     userId: { type: String },
     upVote: { type: [String], default: [] },
     views: { type: [String], default: [] },

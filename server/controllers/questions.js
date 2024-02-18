@@ -64,7 +64,13 @@ export const viewQuestion = async (req, res) => {
 
     try {
         const question = await Questions.findById(_id);
+
+        if (!question) {
+            return res.status(404).json({ message: "Question not found" });
+        }
+
         const viewIndex = question.views.findIndex((id) => id === String(userId));
+
         if (viewIndex === -1) {
             question.views.push(userId);
             await Questions.findByIdAndUpdate(_id, { views: question.views });
@@ -77,6 +83,7 @@ export const viewQuestion = async (req, res) => {
         res.status(500).json({ message: "Error occurred while counting view" });
     }
 }
+
 
 
 // export const voteQuestion = async (req, res) => {

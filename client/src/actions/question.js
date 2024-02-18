@@ -23,8 +23,8 @@ export const fetchAllQuestions = () => async (dispatch) => {
 
 export const postAnswer = (answerData) => async (dispatch) => {
     try {
-        const { id, answerBody, userAnswered, userId } = answerData;
-        const { data } = await api.postAnswer(id, answerBody, userAnswered, userId);
+        const { id, answerBody, userAnswered, userId, userPostedEmail, userPosted } = answerData;
+        const { data } = await api.postAnswer(id, answerBody, userAnswered, userId, userPostedEmail, userPosted);
         dispatch({ type: "POST_ANSWER", payload: data });
         dispatch(fetchAllQuestions());
     } catch (error) {
