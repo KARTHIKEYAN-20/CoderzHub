@@ -1,10 +1,11 @@
 import './App.css';
-import Header from '/workspaces/CoderHub/client/src/Components/Header/Header';
+// import Header from '/workspaces/CoderHub/client/src/Components/Header/Header';
+import Header from './Components/Header/Header';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import HomePage from '/workspaces/CoderHub/client/src/Components/HomePage/HomePage';
-import AskQuestion from '/workspaces/CoderHub/client/src/Components/AskQuestion/AskQuestion';
-import QuestionDetails from '/workspaces/CoderHub/client/src/Components/QuestionDetails/QuestionDetails';
-import Login from '/workspaces/CoderHub/client/src/Components/Login/Login';
+import HomePage from './Components/HomePage/HomePage';
+import AskQuestion from './Components/AskQuestion/AskQuestion';
+import QuestionDetails from './Components/QuestionDetails/QuestionDetails';
+import Login from './Components/Login/Login';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { fetchAllQuestions } from './actions/question';

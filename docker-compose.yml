@@ -1,0 +1,23 @@
+version: "3"
+services:
+  backend:
+    build:
+      context: server
+      dockerfile: Dockerfile
+    ports:
+      - 5000:5000
+    env_file:
+      - ./env/server.env
+    container_name: server
+
+  frontend:
+    build:
+      context: client
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+    stdin_open: true
+    tty: true
+    container_name: client
+    depends_on:
+      - backend
