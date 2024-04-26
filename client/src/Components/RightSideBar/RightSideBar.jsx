@@ -13,25 +13,28 @@ const RightSideBar = () => {
             <div className="App_RightSideBar">
                 <div className="App_RightSideBar_Container">
                     <h3>Contests</h3>
-                    <div className="App_RightSideBar_ContainerList">
+                    <div className="App_RightSideBar_ContainerList"
+                        onClick={() => { window.open('https://www.hackerrank.com/cc-beginner', '_blank'); }}>
                         <div className="App_RightSideBar_MenuRight">
                             <img src={Cpp} alt='following' className='App_RightSideBar_MenuIcons' />
                         </div>
                         <div className="App_RightSideBar_MenuRight">
                             <h4>C++ / C - Beginner</h4>
-                            <p>5th November 2023</p>
+                            <p>27th March 2024</p>
                         </div>
                     </div>
-                    <div className="App_RightSideBar_ContainerList">
+                    <div className="App_RightSideBar_ContainerList"
+                        onClick={() => { window.open('https://www.hackerrank.com/python-beginner-1', '_blank'); }}>
                         <div className="App_RightSideBar_MenuRight">
                             <img src={Python} alt='following' className='App_RightSideBar_MenuIcons' />
                         </div>
                         <div className="App_RightSideBar_MenuRight">
                             <h4>Python - Beginner</h4>
-                            <p>5th November 2023</p>
+                            <p>28th March 2024</p>
                         </div>
                     </div>
-                    <div className="App_RightSideBar_ContainerList">
+                    <div className="App_RightSideBar_ContainerList"
+                        onClick={() => { window.open('https://www.hackerrank.com/java-intermediate-1711418130', '_blank'); }}>
                         <div className="App_RightSideBar_MenuRight">
                             <img src={Java} alt='following' className='App_RightSideBar_MenuIcons' />
                         </div>

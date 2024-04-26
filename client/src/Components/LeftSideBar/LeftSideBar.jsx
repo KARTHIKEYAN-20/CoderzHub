@@ -48,31 +48,34 @@ const LeftSideBar = ({ onFilterChange }) => {
             </div>
             <div className="App_LeftSideBar_Menu_Tags">
                 <h3>Popular Tags</h3>
-                <div className="App_LeftSideBar_MenuItems">
+                <div className="App_LeftSideBar_MenuItems"
+                    onClick={() => handleFilterClick('c/c++')}>
                     <div className="App_LeftSideBar_MenuLeft">
                         <img src={Cpp} alt='following' className='App_LeftSideBar_MenuIcons' />
                     </div>
                     <div className="App_LeftSideBar_MenuRight">
                         <h4>C / C++</h4>
-                        <p>123 Posted by this tag</p>
+                        <p>Posted by this tag</p>
                     </div>
                 </div>
-                <div className="App_LeftSideBar_MenuItems">
+                <div className="App_LeftSideBar_MenuItems"
+                    onClick={() => handleFilterClick('java')}>
                     <div className="App_LeftSideBar_MenuLeft">
                         <img src={Java} alt='following' className='App_LeftSideBar_MenuIcons' />
                     </div>
                     <div className="App_LeftSideBar_MenuRight">
                         <h4>Java</h4>
-                        <p>123 Posted by this tag</p>
+                        <p>Posted by this tag</p>
                     </div>
                 </div>
-                <div className="App_LeftSideBar_MenuItems">
+                <div className="App_LeftSideBar_MenuItems"
+                    onClick={() => handleFilterClick('python')}>
                     <div className="App_LeftSideBar_MenuLeft">
                         <img src={Python} alt='following' className='App_LeftSideBar_MenuIcons' />
                     </div>
                     <div className="App_LeftSideBar_MenuRight">
                         <h4>Python</h4>
-                        <p>123 Posted by this tag</p>
+                        <p>Posted by this tag</p>
                     </div>
                 </div>
             </div>

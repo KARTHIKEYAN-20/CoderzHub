@@ -27,6 +27,23 @@ const Main = ({ filterOption }) => {
     
         return filteredAndSortedQuestions.reverse();
     };
+
+    const filterQuestionsByTag = (questions) => {
+        if (filterOption === 'c/c++') {
+            return questions.filter(question =>
+                question.questionTags.some(t => t.toLowerCase() === 'c' || t.toLowerCase() === 'c++')
+            );
+        } else if (filterOption === 'java') {
+            return questions.filter(question =>
+                question.questionTags.some(t => t.toLowerCase() === 'java' )
+            );
+        } else if (filterOption === 'python') {
+            return questions.filter(question =>
+                question.questionTags.some(t => t.toLowerCase() === 'python' )
+            );
+        }
+        return questions;
+    };
     
     
     let filteredQuestions = questionsList.data;
@@ -35,6 +52,8 @@ const Main = ({ filterOption }) => {
         filteredQuestions = filterQuestionsByWeek(filteredQuestions);
     } else if (filterOption === 'popular') {
         filteredQuestions = filterQuestionsByPopularity(filteredQuestions);
+    } else if(filterOption === 'c/c++' || filterOption === 'python' || filterOption === 'java') {
+        filteredQuestions = filterQuestionsByTag(filteredQuestions)
     }
 
     return (
